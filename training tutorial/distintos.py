@@ -1,14 +1,16 @@
-#coding: utf-8
-#Marcos Nascimento, 2018
+# coding: utf-8
+# Questão: Números distintos
+# (C) 2018, Marcos Nascimento / UFCG, Teaching internship
 
 def distintos(numero):
 	unicos = 0
 	digitos = dict()
-	for digito in str(numero):
-		digitos[digito] = 0
 
 	for digito in str(numero):
-		digitos[digito] += 1
+		if digito in digitos.keys():
+			digitos[digito] += 1
+		else:
+			digitos[digito] = 1
 
 	for digito in digitos.keys():
 		if digitos[digito] == 1:
