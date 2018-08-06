@@ -1,20 +1,25 @@
-#coding: utf-8
-#Marcos Nascimento, 2018
+# coding: utf-8
+# Questão: Casa de show
+# (C) 2018, Marcos Nascimento / UFCG, Teaching internship
 
-FEMININO = "F"
-MASCULINO = "M"
+FEMININO = "f"
+MASCULINO = "m"
 FIM = "fim"
-sexo_feminino, sexo_masculino = 0.0, 0.0
+mulheres, homens = 0.0, 0.0
 
 while True:
-	sexo = raw_input()
-	if sexo.lower() == FIM:
+	sexo = raw_input().lower()
+	if sexo == FIM:
 		break
 	else:
-		if sexo.upper() == FEMININO:
-			sexo_feminino += 1
-		elif sexo.upper() == MASCULINO:
-			sexo_masculino += 1
+		if sexo == FEMININO:
+			mulheres += 1
+		elif sexo == MASCULINO:
+			homens += 1
 
-print "A porcentagem de mulheres é {:.2f}%".format(100*(sexo_feminino/(sexo_feminino + sexo_masculino)))
-print "A porcentagem de homens é {:.2f}%".format(100*(sexo_masculino/(sexo_feminino + sexo_masculino)))
+if mulheres + homens > 0:
+	print "A porcentagem de mulheres é {:.2f}%".format(100*(mulheres/(mulheres + homens)))
+	print "A porcentagem de homens é {:.2f}%".format(100*(homens/(mulheres + homens)))
+else:
+	print "A porcentagem de mulheres é {:.2f}%".format(mulheres)
+	print "A porcentagem de homens é {:.2f}%".format(homens)
