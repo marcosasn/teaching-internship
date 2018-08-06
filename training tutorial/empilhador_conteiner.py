@@ -1,22 +1,23 @@
-#coding: utf-8
-#Marcos Nascimento, 2018
+# coding: utf-8
+# Questão: Empilhador de contêiner
+# (C) 2018, Marcos Nascimento / UFCG, Teaching internship
 
-EMPILHAR = "Empilhar"
-DESEMPILHAR = "Desempilhar"
-FIM_EXPEDIENTE = "Fim de expediente"
+EMPILHAR = "empilhar"
+DESEMPILHAR = "desempilhar"
+FIM_EXPEDIENTE = "fim de expediente"
 ponteiro_pilha = 0
 
-capacidade = int(raw_input())
-if capacidade > 0:
+capacidade_maxima = int(raw_input())
+if capacidade_maxima > 0:
 	while True:
-		acao = raw_input()
+		acao = raw_input().lower()
 		if acao == FIM_EXPEDIENTE:
 			print "Navio está com {} conteiner(s).".format(ponteiro_pilha)
 			break
 		else:
 			if acao == EMPILHAR:
 				ponteiro_pilha += 1
-				if ponteiro_pilha == capacidade:
+				if ponteiro_pilha == capacidade_maxima:
 					print "Navio está com carga completa."
 					break
 			if acao == DESEMPILHAR:
